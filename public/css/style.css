@@ -71,7 +71,7 @@ body {
 
 /* Cards */
 
-.card {
+.listing-card {
     border: none;
     margin-bottom: 2rem;
 }
@@ -124,6 +124,10 @@ body {
 .show-card {
     padding-left: 0;
     padding-right: 0;
+}
+
+.fa-star {
+    color: #fe424d;
 }
 
 
