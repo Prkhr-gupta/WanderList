@@ -130,4 +130,17 @@ body {
     color: #fe424d;
 }
 
+.star-del {
+    display: flex;
+}
+
+.star-input {
+    cursor: pointer;
+}
+
+.real-star {
+    display: none;
+}
+
+
 

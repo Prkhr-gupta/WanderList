@@ -26,8 +26,15 @@
     <h4>Leave a review</h4>
     <form method="post" action="/listings/<%=listing._id%>/reviews" novalidate class="needs-validation">
         <div class="mb-3 mt-3">
-            <label for="rating" class="form-label">Rating</label>
-            <input name="review[rating]" class="form-range" type="range" min="1" max="5">
+            <label for="rating" class="form-label">Rate Us</label>
+            <div class="star-input">
+                <i class="fa-solid fa-star si" id="a"></i>
+                <i class="fa-solid fa-star si" id="b"></i>
+                <i class="fa-solid fa-star si" id="c"></i>
+                <i class="fa-regular fa-star si" id="d"></i>
+                <i class="fa-regular fa-star si" id="e"></i>
+            </div>
+            <input name="review[rating]" class="form-range real-star" type="range" min="1" max="5">
         </div>
         <div class="mb-3 mt-3">
             <label for="comment" class="form-label">Comments</label>
@@ -40,21 +47,29 @@
     <h4>All reviews</h4>
     <div class="row">
         <% for(let review of listing.reviews){ %>
-            <div class="card col-5 ms-3 mb-3">
+            <div class="card col-5 ms-3 mb-3 review-card pb-3 pt-3">
                 <div class="card-body">
                     <h5 class="card-title">Jane Doe</h5>
                     <p class="card-text"><%= review.comment %></p>
-                    <p>
-                        <% let stars = review.rating %>
-                        <% for(let i=0; i<stars; i++){ %>
-                            <i class="fa-solid fa-star"></i>
-                        <% } %>
-                        <% for(let i=0; i< 5-stars; i++){ %>
-                            <i class="fa-regular fa-star"></i>
-                        <% } %>
-                    </p>
+                    <div class="star-del row">
+                        <div class="star col-5">
+                            <% let stars = review.rating %>
+                            <% for(let i=0; i<stars; i++){ %>
+                                <i class="fa-solid fa-star"></i>
+                            <% } %>
+                            <% for(let i=0; i< 5-stars; i++){ %>
+                                <i class="fa-regular fa-star"></i>
+                            <% } %>
+                        </div>
+                        <div class="del col-4 offset-3">
+                            <form method="post" action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE">
+                                <button class="btn btn-dark">Delete</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         <% } %>
     </div>
 </div>
+<script src="/js/show.js"></script>
