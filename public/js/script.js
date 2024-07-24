@@ -7,7 +7,6 @@
     // Loop over them and prevent submission
     Array.from(forms).forEach(form => {
       form.addEventListener('submit', event => {
-        console.log("Submit button clicked");
         if (!form.checkValidity()) {
           event.preventDefault()
           event.stopPropagation()
@@ -17,3 +16,20 @@
       }, false)
     })
   })()
+
+
+let alert = document.querySelector(".alert");
+
+window.addEventListener("load", () => {
+  if(alert){
+    let i=-490;
+    let id = setInterval( () => {
+      alert.style.right = `${i}px`;
+      console.log(i);
+      if(i<0)
+        i+=10;
+      else
+      clearInterval(id);
+    }, 5);
+  }
+});

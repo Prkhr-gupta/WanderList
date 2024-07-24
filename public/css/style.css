@@ -142,5 +142,12 @@ body {
     display: none;
 }
 
+.alert {
+    position: absolute;
+    z-index: 10;
+    right: -500px;
+    margin-top: 1rem;
+}
+
 
 
