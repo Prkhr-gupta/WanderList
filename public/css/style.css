@@ -142,7 +142,7 @@ body {
     display: none;
 }
 
-.alert {
+.flash {
     position: absolute;
     z-index: 10;
     right: -500px;

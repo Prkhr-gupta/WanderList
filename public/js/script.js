@@ -18,7 +18,7 @@
   })()
 
 
-let alert = document.querySelector(".alert");
+let alert = document.querySelector(".flash");
 
 window.addEventListener("load", () => {
   if(alert){
