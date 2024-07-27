@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplate") %>
 <div class="row">
     <div class="col-8 offset-2 mt-3">
-        <form method="POST" action="/listings/<%=listing._id%>?_method=PUT" novalidate class="needs-validation">
+        <form method="POST" action="/listings/<%=listing._id%>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
             <h2>Edit your Listing</h2>
             <hr>
             <div class="mb-3">
@@ -14,21 +14,25 @@
                 <textarea name="listing[desc]" id="desc" class="form-control" required><%=listing.desc%></textarea>
                 <div class="invalid-feedback">Enter a short description</div>
             </div>
-            <div class="mb-3">
-                <label for="image" class="form-label">Image URL: </label>
-                <textarea name="listing[image]" id="image" class="form-control"><%=listing.image%></textarea>
-            </div>
             <div class="row">
-                <div class="mb-3 col-md-4">
-                    <label for="price" class="form-label">Price: </label>
-                    <input type="text" name="listing[price]" id="price" class="form-control" value="<%=listing.price%>" required>
-                    <div class="invalid-feedback">Invalid Price</div>
-                </div>
                 <div class="mb-3 col-md-8">
-                    <label for="country" class="form-label">Country: </label>
-                    <input type="text" name="listing[country]" id="country" class="form-control" value="<%=listing.country%>" required>
-                    <div class="invalid-feedback">Invalid Country</div>
+                    <label for="image" class="form-label">Image URL: </label>
+                    <input type="file" name="listing[image]" id="image" class="form-control">
+                    <div class="mt-4">
+                        <label for="price" class="form-label">Price: </label>
+                        <input type="text" name="listing[price]" id="price" class="form-control" value="<%=listing.price%>" required>
+                        <div class="invalid-feedback">Invalid Price</div>
+                    </div>
                 </div>
+                <div class="mb-3 col-md-4">
+                    Original Listing Image <br>
+                    <img src="<%=degradedImageUrl%>" height="150rem" width="200rem">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country: </label>
+                <input type="text" name="listing[country]" id="country" class="form-control" value="<%=listing.country%>" required>
+                <div class="invalid-feedback">Invalid Country</div>
             </div>
             <div class="mb-3">
                 <label for="loc" class="form-label">Location: </label>

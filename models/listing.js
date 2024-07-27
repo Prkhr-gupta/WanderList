@@ -11,9 +11,8 @@ const listingSchema = new Schema({
         type: String
     },
     image: {
-        type: String,
-        default: "https://static.vecteezy.com/system/resources/thumbnails/022/014/063/small_2x/missing-picture-page-for-website-design-or-mobile-app-design-no-image-available-icon-vector.jpg",
-        set: (v) => v === "" ? "https://static.vecteezy.com/system/resources/thumbnails/022/014/063/small_2x/missing-picture-page-for-website-design-or-mobile-app-design-no-image-available-icon-vector.jpg" : v
+        url: String,
+        filename: String
     },
     price: {
         type: Number,
