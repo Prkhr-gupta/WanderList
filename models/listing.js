@@ -35,7 +35,12 @@ const listingSchema = new Schema({
     owner: {
         type: Schema.Types.ObjectId,
         ref: "User"
-    }
+    },
+    category: [
+        {
+            type: String,
+        }
+    ]
 });
 
 listingSchema.post("findOneAndDelete", async (listing) => {

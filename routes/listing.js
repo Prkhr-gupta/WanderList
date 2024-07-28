@@ -16,6 +16,9 @@ router.route("/")
 //New Route
 router.get("/new", isLoggedIn, listingController.renderNewForm);
 
+//Filter Route
+router.get("/filter/:filter", wrapAsync(listingController.filterListings));
+
 //Show route
 //Update Route
 //Destroy Route

@@ -47,11 +47,6 @@ const sessionOptions = {
     }
 };
 
-//Root
-app.get("/", (req, res) => {
-    res.send("Root Working");
-});
-
 app.use(session(sessionOptions));
 app.use(flash());
 app.use(passport.initialize());

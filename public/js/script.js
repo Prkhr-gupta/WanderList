@@ -19,6 +19,7 @@
 
 
 let alert = document.querySelector(".flash");
+let taxSwitch = document.getElementById("flexSwitchCheckDefault");
 
 window.addEventListener("load", () => {
   if(alert){
@@ -33,3 +34,7 @@ window.addEventListener("load", () => {
     }, 5);
   }
 });
+
+// taxSwitch.addEventListener("click", () => {
+
+// });

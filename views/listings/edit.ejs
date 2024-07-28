@@ -39,6 +39,73 @@
                 <input type="text" name="listing[loc]" id="loc" class="form-control" value="<%=listing.loc%>" required>
                 <div class="invalid-feedback">Invalid Location</div>
             </div>
+            <div class="mb-3">
+                <label class="form-label">Select Categories: </label>
+                <div class="row mt-1">
+                    <div class="col-2 form-check">
+                        <label for="Trending" class="form-check-label">Trending</label>
+                        <input type="checkbox" name="listing[category]" value="Trending" id="Trending" class="form-check-input" <% if(listing.category.includes("Trending")){ %>
+                            checked
+                        <% } %>>
+                    </div>
+                    <div class="col-2 form-check">
+                        <label for="Rooms" class="form-check-label">Rooms</label>
+                        <input type="checkbox" name="listing[category]" value="Rooms" id="Rooms" class="form-check-input" <% if(listing.category.includes("Rooms")){ %>
+                            checked
+                        <% } %>>
+                    </div>
+                    <div class="col-3 form-check">
+                        <label for="Iconic Cities" class="form-check-label">Iconic Cities</label>
+                        <input type="checkbox" name="listing[category]" value="Iconic Cities" id="Iconic Cities" class="form-check-input" <% if(listing.category.includes("Iconic Cities")){ %>
+                            checked
+                        <% } %>>
+                    </div>
+                    <div class="col-2 form-check">
+                        <label for="Mountains" class="form-check-label">Mountains</label>
+                        <input type="checkbox" name="listing[category]" value="Mountains" id="Mountains" class="form-check-input" <% if(listing.category.includes("Mountains")){ %>
+                            checked
+                        <% } %>>
+                    </div>
+                    <div class="col-2 form-check">
+                        <label for="Castles" class="form-check-label">Castles</label>
+                        <input type="checkbox" name="listing[category]" value="Castles" id="Castles" class="form-check-input" <% if(listing.category.includes("Castles")){ %>
+                            checked
+                        <% } %>>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 form-check">
+                        <label for="Camping" class="form-check-label">Camping</label>
+                        <input type="checkbox" name="listing[category]" value="Camping" id="Camping" class="form-check-input" <% if(listing.category.includes("Camping")){ %>
+                            checked
+                        <% } %>>
+                    </div>
+                    <div class="col-2 form-check">
+                        <label for="Farms" class="form-check-label">Farms</label>
+                        <input type="checkbox" name="listing[category]" value="Farms" id="Farms" class="form-check-input" <% if(listing.category.includes("Farms")){ %>
+                            checked
+                        <% } %>>
+                    </div>
+                    <div class="col-3 form-check">
+                        <label for="Amazing Pools" class="form-check-label">Amazing Pools</label>
+                        <input type="checkbox" name="listing[category]" value="Amazing Pools" id="Amazing Pools" class="form-check-input" <% if(listing.category.includes("Amazing Pools")){ %>
+                            checked
+                        <% } %>>
+                    </div>
+                    <div class="col-2 form-check">
+                        <label for="Arctic" class="form-check-label">Arctic</label>
+                        <input type="checkbox" name="listing[category]" value="Arctic" id="Arctic" class="form-check-input" <% if(listing.category.includes("Arctic")){ %>
+                            checked
+                        <% } %>>
+                    </div>
+                    <div class="col-2 form-check">
+                        <label for="Beaches" class="form-check-label">Beaches</label>
+                        <input type="checkbox" name="listing[category]" value="Beaches" id="Beaches" class="form-check-input" <% if(listing.category.includes("Beaches")){ %>
+                            checked
+                        <% } %>>
+                    </div>
+                </div>
+            </div>
             <button class="btn btn-dark edit-btn m-3">Edit Listing</button>
         </form>
     </div>
