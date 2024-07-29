@@ -4,7 +4,8 @@ const ExpressError = require("../utils/ExpressError.js");
 //Index Route
 module.exports.home = async (req, res) => {
     let allListings = await Listing.find({});
-    res.render("listings/home.ejs", {allListings});
+    let filter = "all1";
+    res.render("listings/home.ejs", {allListings, filter});
 }
 
 //New Route
@@ -16,7 +17,31 @@ module.exports.renderNewForm = (req, res) => {
 module.exports.filterListings = async (req, res) => {
     let {filter} = req.params;
     let allListings = await Listing.find({category: `${filter}`});
-    res.render("listings/home.ejs", {allListings});
+    res.render("listings/home.ejs", {allListings, filter});
+}
+
+//Search Route
+module.exports.searchListings = async (req, res) => {
+    let {destination} = req.body;
+    let city = await Listing.find({loc: `${destination}`});
+    let country = await Listing.find({country: `${destination}`});
+    let all = [...city, ...country];
+    let allListings = [];
+    let titles = [];
+    for(let listing of all){
+        let title = listing.title;
+        if(!titles.includes(title)){
+            console.log(title);
+            titles.push(title);
+            allListings.push(listing);
+        }
+    }
+    if(allListings.length == 0){
+        req.flash("error", "No Listings found!");
+        return res.redirect("/listings");
+    }
+    let filter = "all1";
+    res.render("listings/home.ejs", {allListings, filter});
 }
 
 //Show Route

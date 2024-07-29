@@ -1,44 +1,141 @@
 <% layout("/layouts/boilerplate") %>
 <div id="filters">
-    <div class="filter" id="Trending">
+    <div class="filter" id="all1" <% if(filter == "all1"){ %>
+        style="border-bottom: 1px solid black;"
+    <% } %>>
+        <div><i class="fa-solid fa-house"></i></div>
+        <p>All Listings</p>
+    </div>
+    <div class="filter" id="Trending" <% if(filter == "Trending"){ %>
+        style="border-bottom: 1px solid black;"
+    <% } %>>
         <div><i class="fa-solid fa-fire"></i></div>
         <p>Trending</p>
     </div>
-    <div class="filter" id="Rooms">
+    <div class="filter" id="Rooms" <% if(filter == "Rooms"){ %>
+        style="border-bottom: 1px solid black;"
+    <% } %>>
         <div><i class="fa-solid fa-bed"></i></div>
         <p>Rooms</p>
     </div>
-    <div class="filter" id="Iconic Cities">
+    <div class="filter" id="Iconic Cities" <% if(filter == "Iconic Cities"){ %>
+        style="border-bottom: 1px solid black;"
+    <% } %>>
         <div><i class="fa-solid fa-mountain-city"></i></div>
         <p>Iconic Cities</p>
     </div>
-    <div class="filter" id="Mountains">
+    <div class="filter" id="Mountains" <% if(filter == "Mountains"){ %>
+        style="border-bottom: 1px solid black;"
+    <% } %>>
         <div><i class="fa-solid fa-mountain"></i></div>
         <p>Mountains</p>
     </div>
-    <div class="filter" id="Castles">
+    <div class="filter" id="Castles" <% if(filter == "Castles"){ %>
+        style="border-bottom: 1px solid black;"
+    <% } %>>
         <div><i class="fa-brands fa-fort-awesome"></i></div>
         <p>Castles</p>
     </div>
-    <div class="filter" id="Amazing Pools">
+    <div class="filter" id="Amazing Pools" <% if(filter == "Amazing Pools"){ %>
+        style="border-bottom: 1px solid black;"
+    <% } %>>
         <div><i class="fa-solid fa-person-swimming"></i></div>
         <p>Amazing Pools</p>
     </div>
-    <div class="filter" id="Camping">
+    <div class="filter" id="Camping" <% if(filter == "Camping"){ %>
+        style="border-bottom: 1px solid black;"
+    <% } %>>
         <div><i class="fa-solid fa-campground"></i></div>
         <p>Camping</p>
     </div>
-    <div class="filter" id="Farms">
+    <div class="filter" id="Farms" <% if(filter == "Farms"){ %>
+        style="border-bottom: 1px solid black;"
+    <% } %>>
         <div><i class="fa-solid fa-cow"></i></div>
         <p>Farms</p>
     </div>
-    <div class="filter" id="Arctic">
+    <div class="filter" id="Arctic" <% if(filter == "Arctic"){ %>
+        style="border-bottom: 1px solid black;"
+    <% } %>>
         <div><i class="fa-regular fa-snowflake"></i></div>
         <p>Arctic</p>
     </div>
-    <div class="filter" id="Beaches">
+    <div class="filter" id="Beaches" <% if(filter == "Beaches"){ %>
+        style="border-bottom: 1px solid black;"
+    <% } %>>
         <div><i class="fa-solid fa-umbrella-beach"></i></div>
         <p>Beaches</p>
+    </div>
+    <div class="hiddenFilter">
+        <select class="form-select Filter">
+            <option selected>Filters</option>
+            <option value="all1">
+                <div class="filter" id="all1">
+                    <div><i class="fa-solid fa-house"></i></div>
+                    <p>All Listings</p>
+                </div>
+            </option>
+            <option value="Trending">
+                <div class="filter" id="Trending">
+                    <div><i class="fa-solid fa-fire"></i></div>
+                    <p>Trending</p>
+                </div>
+            </option>
+            <option value="Rooms">
+                <div class="filter" id="Rooms">
+                    <div><i class="fa-solid fa-bed"></i></div>
+                    <p>Rooms</p>
+                </div>
+            </option>
+            <option value="Iconic Cities">
+                <div class="filter" id="Iconic Cities">
+                    <div><i class="fa-solid fa-mountain-city"></i></div>
+                    <p>Iconic Cities</p>
+                </div>
+            </option>
+            <option value="Mountains">
+                <div class="filter" id="Mountains">
+                    <div><i class="fa-solid fa-mountain"></i></div>
+                    <p>Mountains</p>
+                </div>
+            </option>
+            <option value="Castles">
+                <div class="filter" id="Castles">
+                    <div><i class="fa-brands fa-fort-awesome"></i></div>
+                    <p>Castles</p>
+                </div>
+            </option>
+            <option value="Amazing Pools">
+                <div class="filter" id="Amazing Pools">
+                    <div><i class="fa-solid fa-person-swimming"></i></div>
+                    <p>Amazing Pools</p>
+                </div>
+            </option>
+            <option value="Camping">
+                <div class="filter" id="Camping">
+                    <div><i class="fa-solid fa-campground"></i></div>
+                    <p>Camping</p>
+                </div>
+            </option>
+            <option value="Farms">
+                <div class="filter" id="Farms">
+                    <div><i class="fa-solid fa-cow"></i></div>
+                    <p>Farms</p>
+                </div>
+            </option>
+            <option value="Arctic">
+                <div class="filter" id="Arctic">
+                    <div><i class="fa-regular fa-snowflake"></i></div>
+                    <p>Arctic</p>
+                </div>
+            </option>
+            <option value="Beaches">
+                <div class="filter" id="Beaches">
+                    <div><i class="fa-solid fa-umbrella-beach"></i></div>
+                    <p>Beaches</p>
+                </div>
+            </option>
+        </select>
     </div>
     <div class="tax-toggle">
         <div class="form-check-reverse form-switch">
@@ -47,7 +144,7 @@
         </div>
     </div>
 </div>
-<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3" id="all">
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-4" id="all">
     <%for(let listing of allListings){%>
         <a href="/listings/<%=listing._id%>" class="listing-link">
         <div class="card col listing-card">
@@ -56,7 +153,9 @@
             <div class="card-body">
                 <p class="card-text"><b><%=listing.title%></b> <br>
                 <%=listing.loc%>, <%=listing.country%> <br>
-                &#8377;<%=listing.price.toLocaleString("en-IN")%>/night</p>
+                &#8377;<%=listing.price.toLocaleString("en-IN")%>/night 
+                <i class="tax-info">&nbsp; +18% GST</i>
+            </p>
             </div>
         </div>
         </a>

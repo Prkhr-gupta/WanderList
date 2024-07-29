@@ -18,6 +18,8 @@ router.get("/new", isLoggedIn, listingController.renderNewForm);
 
 //Filter Route
 router.get("/filter/:filter", wrapAsync(listingController.filterListings));
+//Search Route
+router.post("/search", wrapAsync(listingController.searchListings));
 
 //Show route
 //Update Route
