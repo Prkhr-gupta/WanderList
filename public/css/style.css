@@ -230,3 +230,10 @@ body {
         justify-content: space-between;
     }
 }
+
+/* Map */
+
+#map { 
+    height: 60vh;
+    width: 100vh;
+}

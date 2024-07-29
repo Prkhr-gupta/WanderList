@@ -1,5 +1,8 @@
 const Listing = require("../models/listing.js");
 const ExpressError = require("../utils/ExpressError.js");
+const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
+const mapToken = process.env.MAP_TOKEN;
+const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
 //Index Route
 module.exports.home = async (req, res) => {
@@ -58,11 +61,17 @@ module.exports.showListing = async (req, res) => {
 
 //Create Route
 module.exports.createListing = async (req, res, next) => {
+    let response = await geocodingClient.forwardGeocode({
+        query: req.body.listing.loc,
+        limit: 1
+    })
+    .send()
     let url = req.file.path;
     let filename = req.file.filename;
     const listing = new Listing(req.body.listing);
     listing.owner = req.user._id;
     listing.image = {url, filename};
+    listing.geometry = response.body.features[0].geometry;
     await listing.save();
     req.flash("success", "New listing added!");
     res.redirect("/listings");
@@ -85,8 +94,15 @@ module.exports.updateListing = async (req, res) => {
     if(!req.body.listing){
         throw new ExpressError(400, "Send Valid Data");
     }
+    let response = await geocodingClient.forwardGeocode({
+        query: req.body.listing.loc,
+        limit: 1
+    })
+    .send()
     let {id} = req.params;
     let listing = await Listing.findByIdAndUpdate(id, req.body.listing, {runValidators: true});
+    listing.geometry = response.body.features[0].geometry;
+    await listing.save();
     if(req.file){
         let url = req.file.path;
         let filename = req.file.filename;
