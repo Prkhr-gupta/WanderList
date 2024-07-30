@@ -13,5 +13,7 @@ Explore thousands of unique homes around the world, from cozy cottages to luxury
 
 ## Screenshots
 
-![App Screenshot](https://drive.google.com/file/d/1rkAdAw-Y2I5RXmJqxqYO618x3e8xKE6u/view?usp=sharing
-)
+https://drive.google.com/file/d/1rkAdAw-Y2I5RXmJqxqYO618x3e8xKE6u/view?usp=sharing
+
+
+https://drive.google.com/file/d/1rkAdAw-Y2I5RXmJqxqYO618x3e8xKE6u/view?usp=sharing
