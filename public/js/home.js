@@ -6,7 +6,7 @@ let Filter = document.querySelector(".Filter");
 for(let filter of filters){
     filter.addEventListener("click", () => {
         let category = filter.id;
-        window.location.href = `https://wanderlist-00rw.onrender.com/listings/filter/${category}`;
+        window.location.replace(`https://wanderlist-00rw.onrender.com/listings/filter/${category}`);
     });
 }
 
