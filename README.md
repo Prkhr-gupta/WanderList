@@ -1,8 +1,17 @@
-#WanderList
-First Major Project - WanderList - A Hotel Booking and Renting WebApp
 
-Wanderlist is a full-featured hotel booking web application with user-friendly interface that allows customers to search, filter, and book hotels efficiently.
-Utilized RESTful APIs to enable seamless communication between the front-end and back-end systems.
+# WanderList
+
+Discover and Share Unique Stays with Our Home-Sharing Platform
+
+Explore thousands of unique homes around the world, from cozy cottages to luxury villas. Whether you're seeking an adventure in a bustling city, a relaxing retreat in nature, or a cultural experience in a charming town, WanderList connects you with authentic accommodations and local hosts who share their insider tips and recommendations.
+
+
+## Demo
 
 
 
+
+## Screenshots
+
+![App Screenshot](https://drive.google.com/file/d/1rkAdAw-Y2I5RXmJqxqYO618x3e8xKE6u/view?usp=sharing
+)
