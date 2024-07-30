@@ -21,7 +21,7 @@ taxSwitch.addEventListener("click", () => {
 Filter.addEventListener("change", () => {
     let selectedValue = Filter.value; 
     if (selectedValue !== "") { 
-        window.location.href = `https://wanderlist-00rw.onrender.com/listings/filter/${selectedValue}`;
+        window.location =`https://wanderlist-00rw.onrender.com/listings/filter/${selectedValue}`;
     } 
 })
 
