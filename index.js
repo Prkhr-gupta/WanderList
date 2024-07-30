@@ -16,8 +16,6 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
-const Review = require("./models/review.js");
-const Listing = require("./models/listing.js");
 
 const app = express();
 const port = 8080;
@@ -31,7 +29,7 @@ main()
     .catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/WanderList');
+  await mongoose.connect(dbUrl);
 }
 
 app.set("view engine", "ejs");
