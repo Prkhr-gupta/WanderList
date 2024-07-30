@@ -31,7 +31,7 @@ details and also included the option to edit or delete the listing using mongoos
 ![App Screenshot](https://res.cloudinary.com/de69w6b8t/image/upload/v1722380393/Screenshot_2024-07-31_034332_igijys.png)
 ![App Screenshot](https://res.cloudinary.com/de69w6b8t/image/upload/v1722381745/Screenshot_2024-07-31_045209_deh8c5.png)
 
-Built a review system and also a map feature using Mapbox software to make the website more interactive.
+Built a review system and also a map feature using Mapbox software to make the website more informative.
 
 ![App Screenshot](https://res.cloudinary.com/de69w6b8t/image/upload/v1722380599/Screenshot_2024-07-31_034416_uofkb8.png)
 
