@@ -6,7 +6,7 @@ let Filter = document.querySelector(".Filter");
 for(let filter of filters){
     filter.addEventListener("click", () => {
         let category = filter.id;
-        window.location.href = `http://localhost:8080/listings/filter/${category}`;
+        window.location.href = `https://wanderlist-00rw.onrender.com/listings/filter/${category}`;
     });
 }
 
@@ -21,7 +21,7 @@ taxSwitch.addEventListener("click", () => {
 Filter.addEventListener("change", () => {
     let selectedValue = Filter.value; 
     if (selectedValue !== "") { 
-        window.location.href = `http://localhost:8080/listings/filter/${selectedValue}`;
+        window.location.href = `https://wanderlist-00rw.onrender.com/listings/filter/${selectedValue}`;
     } 
 })
 
