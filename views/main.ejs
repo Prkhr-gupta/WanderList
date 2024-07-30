@@ -1,0 +1,62 @@
+<% layout("/layouts/boilerplate") %>
+
+<h1 class="heading">WanderList</h1>
+<div class="desc col-10 offset-1">
+    <h3>Discover thousands of unique homes around the world, from cozy cottages to luxury villas. </h3>
+</div>
+
+<div class="slider">
+    <div class="slides">
+        <% let counter = 1 %>
+        <% for(let url of imagesUrl){ %>
+            <% let id = "radio" + counter; %>
+            <input type="radio" name="radio-btn" id=<%=id%>>
+            <% counter++ %>
+        <% } %>
+        <div class="slide first">
+        </div>
+        <% for(let url of imagesUrl){ %>
+            <div class="slide">
+                <img src="<%=url%>">
+            </div>
+        <% } %>
+        <% counter = 1 %>
+        <div class="navigation-auto">
+            <% for(let url of imagesUrl){ %>
+                <div class="auto-btn" + <%=counter%>></div>
+                <% counter++ %>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-10 offset-1 mt-5 about">
+        <h4>Whether you're seeking an adventure in a bustling city, a relaxing retreat in nature, or a cultural experience in a charming town, WanderList connects you with authentic accommodations and local hosts who share their insider tips and recommendations.</h4>
+        <div class="btn-class mt-3">
+            <a href="https://wanderlist-00rw.onrender.com/listings">
+            <button type="button" class="btn btn-outline-danger explore btn-lg">Explore Now!</button>
+            </a>
+        </div>
+        <br> <br>
+        <h4>Start Your Journey Today. Whether you're planning a weekend getaway or a month-long adventure, WanderList is your gateway to discovering the world in a new and authentic way. Browse our listings, find your perfect stay, and embark on your next adventure with WanderList.</h4>
+        <div class="btn-class mt-3">
+            <a href="https://wanderlist-00rw.onrender.com/signup">
+            <button type="button" class="btn btn-outline-danger explore btn-lg">Sign up</button>
+            </a>
+        </div>
+        <br> <br>
+    </div>
+</div>
+
+<script>
+    let counter = 1;
+    setInterval(function(){
+        let id = "radio" + counter;
+        document.getElementById(id).checked = true;
+        counter++;
+        if(counter > 30){
+            counter = 1;
+        }
+    }, 4000);
+</script>

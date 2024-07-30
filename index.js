@@ -16,6 +16,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const imagesUrl = require("./imagesUrl.js");
 
 const app = express();
 const port = 8080;
@@ -80,7 +81,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/", async (req, res) => {
-    res.send("home page");
+    res.render("main.ejs", {imagesUrl});
 });
 
 app.use("/listings", listingRouter);

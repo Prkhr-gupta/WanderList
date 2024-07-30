@@ -237,3 +237,168 @@ body {
     height: 60vh;
     width: 100vh;
 }
+
+/* main */
+
+.heading {
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.desc {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.slider {
+    margin: auto;
+    width: 70vh;
+    height: 50vh;
+    overflow-x: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+.slides {
+    width: 500%;
+    height: 50vh;
+    display: flex;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img {
+    width: 70vh;
+    height: 50vh;
+}
+
+.slides input {
+    display: none;
+}
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 70vh;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.navigation-auto div {
+    /* border: 2px solid white; */
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 5rem;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+#radio4:checked ~ .first {
+    margin-left: -60%;
+}
+#radio5:checked ~ .first {
+    margin-left: -80%;
+}
+#radio6:checked ~ .first {
+    margin-left: -100%;
+}
+#radio7:checked ~ .first {
+    margin-left: -120%;
+}
+#radio8:checked ~ .first {
+    margin-left: -140%;
+}
+#radio9:checked ~ .first {
+    margin-left: -160%;
+}
+#radio10:checked ~ .first {
+    margin-left: -180%;
+}
+#radio11:checked ~ .first {
+    margin-left: -200%;
+}
+#radio12:checked ~ .first {
+    margin-left: -220%;
+}
+#radio13:checked ~ .first {
+    margin-left: -240%;
+}
+#radio14:checked ~ .first {
+    margin-left: -260%;
+}
+#radio15:checked ~ .first {
+    margin-left: -280%;
+}
+#radio16:checked ~ .first {
+    margin-left: -300%;
+}
+#radio17:checked ~ .first {
+    margin-left: -320%;
+}
+#radio18:checked ~ .first {
+    margin-left: -340%;
+}
+#radio19:checked ~ .first {
+    margin-left: -360%;
+}
+#radio20:checked ~ .first {
+    margin-left: -380%;
+}
+#radio21:checked ~ .first {
+    margin-left: -400%;
+}
+#radio22:checked ~ .first {
+    margin-left: -420%;
+}
+#radio23:checked ~ .first {
+    margin-left: -440%;
+}
+#radio24:checked ~ .first {
+    margin-left: -460%;
+}
+#radio25:checked ~ .first {
+    margin-left: -480%;
+}
+#radio26:checked ~ .first {
+    margin-left: -500%;
+}
+#radio27:checked ~ .first {
+    margin-left: -520%;
+}
+#radio28:checked ~ .first {
+    margin-left: -540%;
+}
+#radio29:checked ~ .first {
+    margin-left: -560%;
+}
+#radio30:checked ~ .first {
+    margin-left: -580%;
+}
+
+.explore {
+    margin: auto;
+}
+
+.about {
+    text-align: center;
+}
+
+.btn-class {
+    text-align: center;
+}
