@@ -20,7 +20,6 @@ taxSwitch.addEventListener("click", () => {
 
 Filter.addEventListener("change", () => {
     let selectedValue = Filter.value; 
-    console.log(selectedValue);
     if (selectedValue !== "") { 
         window.location.href = `http://localhost:8080/listings/filter/${selectedValue}`;
     } 
