@@ -102,7 +102,7 @@ body {
 
 .listing-card {
   border: none;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .card-img-top {
@@ -178,10 +178,13 @@ body {
 }
 
 .bookingDiv {
-  float: right;
-  width: 7rem;
-  position: relative;
-  bottom: 1rem;
+}
+
+#startDate {
+  margin-left: 1rem;
+}
+#endDate {
+  margin-left: 1.5rem;
 }
 
 /* filters */

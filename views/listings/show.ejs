@@ -18,7 +18,19 @@
                 <%=listing.loc%>, <br>
                 <%=listing.country%>
                 <% if(currUser && !currUser._id.equals(listing.owner._id)){ %>
-                <a href="/listings/<%=listing._id%>/edit" class="btn btn-dark edit-btn col-1 offset-3 bookingDiv">Book Now</a>
+                    <form class="bookingDiv form-horizontal needs-validation" novalidate>
+                        <div>
+                            <label for="startDate">Start Date:</label>
+                            <input type="date" name="startDate" id="startDate" required>
+                        </div>
+                        <div class="mt-3">
+                            <label for="endDate">End Date:</label>
+                            <input type="date" name="endDate" id="endDate" required>
+                        </div>
+                        <div class="mt-3">
+                            <button class="btn btn-dark edit-btn">Book Now</button>
+                        </div>
+                    </form>
                 <% } %>
             </p>
         </div>
