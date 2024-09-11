@@ -35,6 +35,10 @@ Built a review system and also a map feature using Mapbox software to make the w
 
 ![App Screenshot](https://res.cloudinary.com/de69w6b8t/image/upload/v1722380599/Screenshot_2024-07-31_034416_uofkb8.png)
 
+Integrated PayPal API for seamless payment processing to book listings.
+
+![App Screenshot](https://res.cloudinary.com/de69w6b8t/image/upload/v1726058593/Screenshot_2024-09-11_181243_nwlemt.png)
+
 Finally deployed the project using Render.
 
 
