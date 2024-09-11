@@ -7,6 +7,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
+const wrapAsync = require("./utils/wrapAsync.js");
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
@@ -17,6 +18,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 const imagesUrl = require("./imagesUrl.js");
+const paypal = require("./services/paypal.js");
 
 const app = express();
 const port = 8080;
@@ -31,7 +33,7 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect(localDbUrl);
+  await mongoose.connect(dbUrl);
 }
 
 app.set("view engine", "ejs");
@@ -42,7 +44,7 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 
 const store = MongoStore.create({
-  mongoUrl: localDbUrl,
+  mongoUrl: dbUrl,
   crypto: {
     secret: process.env.SECRET,
   },
@@ -88,6 +90,29 @@ app.get("/", async (req, res) => {
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
+
+app.post(
+  "/pay",
+  wrapAsync(async (req, res) => {
+    let { price, desc } = req.body;
+    const url = await paypal.createOrder(price, desc);
+    res.redirect(url);
+  })
+);
+
+app.get(
+  "/complete-order",
+  wrapAsync(async (req, res) => {
+    await paypal.capturePayment(req.query.token);
+    req.flash("success", "Booking Succesful!");
+    res.redirect("/listings");
+  })
+);
+
+app.get("/cancel-order", (req, res) => {
+  req.flash("error", "Booking Cancelled!");
+  res.redirect("/listings");
+});
 
 //Page not found
 app.all("*", (req, res, next) => {
